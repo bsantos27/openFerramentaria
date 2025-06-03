@@ -1,23 +1,23 @@
 # 🧪 Testes E2E - OpenFerramentaria
 
-Este projeto contém testes automatizados end-to-end (E2E) usando [Cypress](https://www.cypress.io/) e [Cucumber](https://cucumber.io/) para validar o funcionamento do sistema [OpenFerramentaria](https://openferramentaria.openmobile.com.br/).
+Este repositório contém testes automatizados end-to-end (E2E) utilizando [Cypress](https://www.cypress.io/) e [Cucumber](https://cucumber.io/) para validar o comportamento da aplicação [OpenFerramentaria](https://openferramentaria.openmobile.com.br/).
 
 ---
 
 ## ✅ Tecnologias Utilizadas
 
-| Ferramenta                                                                 | Versão     | Descrição                                                         |
-|----------------------------------------------------------------------------|------------|-------------------------------------------------------------------|
-| [Cypress](https://www.cypress.io/)                                         | ^13.8.1    | Framework de testes E2E moderno e rápido                         |
-| [Cucumber BDD](https://cucumber.io/)                                       | Gherkin    | Linguagem natural para definição de testes                       |
-| [@badeball/cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) | ^22.0.1 | Plugin oficial BDD para Cypress                                 |
-| [@cypress/webpack-preprocessor](https://github.com/cypress-io/cypress-webpack-preprocessor) | ^6.0.4     | Pré-processador para arquivos feature com Webpack               |
+| Ferramenta                                                                 | Versão     | Descrição                                                      |
+|----------------------------------------------------------------------------|------------|----------------------------------------------------------------|
+| [Cypress](https://www.cypress.io/)                                         | ^13.8.1    | Framework moderno e rápido para testes E2E                    |
+| [Cucumber BDD](https://cucumber.io/)                                       | Gherkin    | Linguagem de escrita de cenários de teste em formato natural |
+| [@badeball/cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) | ^22.0.1 | Integração do Cucumber com o Cypress                          |
+| [@cypress/webpack-preprocessor](https://github.com/cypress-io/cypress-webpack-preprocessor) | ^6.0.4     | Pré-processador de arquivos `.feature` com Webpack           |
 
 ---
 
-## 📁 Estrutura esperada do projeto
+## 📁 Estrutura do Projeto
 
-```
+```bash
 openFerramentaria/
 ├── cypress/
 │   ├── downloads/
@@ -43,28 +43,42 @@ openFerramentaria/
 
 ---
 
-## 🚀 Como configurar e rodar localmente
+## 🚀 Como Configurar e Executar Localmente
 
-### 1. Clonar o repositório
+### 1. Clonar o Repositório
 
 ```bash
 git clone https://github.com/bsantos27/openFerramentaria.git
 cd openFerramentaria
 ```
 
-### 2. Instalar dependências
+### 2. Instalar as Dependências
+
+Você pode instalar manualmente:
+
+```bash
+npm install --save-dev cypress@^13.8.1
+npm install --save-dev @badeball/cypress-cucumber-preprocessor@^22.0.1
+npm install --save-dev @cypress/webpack-preprocessor@^6.0.4
+npm install --save-dev @bahmutov/cypress-esbuild-preprocessor
+npm install --save-dev @badeball/cypress-cucumber-preprocessor/esbuild
+```
+
+Ou, se já estiver tudo listado no `package-lock.json`:
 
 ```bash
 npm ci
 ```
 
-### 3. Rodar os testes
+### 3. Executar os Testes
+
+Via terminal:
 
 ```bash
 npm run test
 ```
 
-Ou com a interface visual:
+Ou usando a interface visual do Cypress:
 
 ```bash
 npx cypress open
@@ -92,10 +106,11 @@ module.exports = defineConfig({
 });
 ```
 
+---
 
 ## 🤖 Integração com Jenkins (CI/CD)
 
-Este projeto está preparado para rodar os testes automaticamente no Jenkins via Docker.
+Este projeto está configurado para ser executado em pipelines Jenkins com ambiente Docker.
 
 ### `Jenkinsfile`
 
@@ -155,7 +170,7 @@ pipeline {
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
 
@@ -163,4 +178,4 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 **Bruno Costa Santos**  
 Analista de Requisitos e Testes  
-[GitHub](https://github.com/bsantos27)
+[GitHub: bsantos27](https://github.com/bsantos27)
